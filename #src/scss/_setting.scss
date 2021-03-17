@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Arial";
+    src: url(../fonts/arial/arial.woff2) format("woff2"), url(../fonts/arial/arial.woff) format("woff"), url(../fonts/arial/arial.ttf) format("truetype"), url(../fonts/arial/arial.eot);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sergoe-UI";
+    src: url(../fonts/sergoeui/segoeui.woff2) format("woff2"), url(../fonts/sergoeui/segoeui.woff) format("woff"), url(../fonts/sergoeui/segoeui.ttf) format("truetype"), url(../fonts/arial/arial.eot);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Icon";
+    src: url(../fonts/icon/icon.woff2) format("woff2"), url(../fonts/icon/icon.woff) format("woff"), url(../fonts/icon/icon.ttf) format("truetype"), url(../fonts/icon/icon.eot);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+//colors
+$white:#f4fbff;
+$black:#111111;
+$yellow:#f6ae35;
+$yellow-light:#ffc41f;
+body {
+    overflow-x: hidden;
+    font-family: "Arial";
+    font-size: 16px;
+    color: $white;
+    max-width: 1920px;
+    width: 100%;
+}
+
+.container {
+    max-width: 1180px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
