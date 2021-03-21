@@ -22,18 +22,92 @@
     font-display: swap;
 }
 
-//colors
 $white:#f4fbff;
 $black:#111111;
 $yellow:#f6ae35;
 $yellow-light:#ffc41f;
+$desktop:1200px;
+$tablet:992px;
+$mobile:768px;
 body {
     overflow-x: hidden;
     font-family: "Arial";
     font-size: 16px;
+    line-height: 1.2;
     color: $white;
     max-width: 1920px;
     width: 100%;
+    margin: 0 auto;
+    background: linear-gradient( rgba(0, 0, 0, .5));
+    &.lock {
+        overflow-y: hidden;
+    }
+    @media(max-width: $tablet) {
+        font-size: 13px;
+    }
+}
+
+a,
+svg {
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+    -moz-transition: opacity 0.4s ease;
+    -ms-transition: opacity 0.4s ease;
+    -o-transition: opacity 0.4s ease;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover,
+button:active,
+button:focus {
+    outline: none;
+    opacity: 0.6;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+input:active,
+textarea:active {
+    outline: none;
+}
+
+:focus {
+    outline: none;
+}
+
+textarea {
+    resize: none;
 }
 
 .container {
@@ -43,4 +117,28 @@ body {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Sergoe-UI";
+    font-weight: 400;
+    font-size: 3em;
+    @media (max-width: $tablet) {
+        text-align: center;
+    }
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 15px 35px;
+    border: 2px solid $yellow-light;
+    border-radius: 40px;
+    font-size: 1.25em;
+    box-sizing: border-box;
+    &:hover {
+        opacity: 0.8;
+    }
 }

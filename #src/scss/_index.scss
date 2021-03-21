@@ -1,0 +1,121 @@
+.wr-intro {
+    height: 100vh;
+    min-height: 600px;
+    padding-top: 160px;
+    background: linear-gradient( rgba(0, 0, 0, .5)), url(../media/slide-1.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover;
+    box-sizing: border-box;
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+            height: 300px;
+            max-width: 550px;
+            width: 100%;
+            a {
+                color: $yellow-light;
+            }
+            @media(max-width:$tablet) {
+                align-items: center;
+                height: fit-content;
+                p {
+                    text-align: center;
+                }
+            }
+        }
+        @media(max-width:$tablet) {
+            justify-content: center;
+        }
+    }
+    @media(max-width:$tablet) {
+        padding-top: unset;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 190px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    box-sizing: border-box;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo img {
+        width: 188px;
+        height: 36px;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 700px;
+        transition: all 0.4s ease;
+        a {
+            padding: 15px 12px;
+            color: $white;
+            &.active {
+                border-bottom: 2px solid $yellow;
+            }
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        @media(max-width:$tablet) {
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            top: -9999px;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient( rgba(0, 0, 0, .7));
+            font-size: 2em;
+            &.active {
+                top: 0;
+            }
+        }
+    }
+    .burger {
+        position: relative;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 22px;
+        width: 35px;
+        cursor: pointer;
+        z-index: 100;
+        transition: all 0.4s ease;
+        &.active {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+        }
+        span {
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $white;
+        }
+        @media(max-width:$tablet) {
+            display: flex;
+        }
+    }
+}
