@@ -41,7 +41,7 @@
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -64,6 +64,7 @@ header {
         align-items: center;
         width: 700px;
         transition: all 0.4s ease;
+        box-sizing: border-box;
         a {
             padding: 15px 12px;
             color: $white;
@@ -77,30 +78,32 @@ header {
         @media(max-width:$tablet) {
             position: absolute;
             flex-direction: column;
-            justify-content: center;
-            top: -9999px;
+            justify-content: flex-start;
+            top: -100vh;
             left: 0;
             right: 0;
             width: 100vw;
             height: 100vh;
+            padding-top: 100px;
             background: linear-gradient( rgba(0, 0, 0, .7));
             font-size: 2em;
+            overflow-y: auto;
             &.active {
                 top: 0;
             }
         }
     }
     .burger {
-        position: relative;
         display: none;
+        position: relative;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+        z-index: 100;
         height: 22px;
         width: 35px;
-        cursor: pointer;
-        z-index: 100;
         transition: all 0.4s ease;
+        cursor: pointer;
         &.active {
             transform: rotate(90deg);
             -webkit-transform: rotate(90deg);
@@ -116,6 +119,129 @@ header {
         }
         @media(max-width:$tablet) {
             display: flex;
+        }
+    }
+}
+
+.wr-slider {
+    position: relative;
+    background: #f4f5f5;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: all ease 1s;
+    .slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        padding: 100px 90px;
+        box-sizing: border-box;
+        @media(max-width: $tablet) {
+            padding: 30px 15px 90px 15px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $black;
+            a {
+                color: $white;
+                background: $yellow;
+                @media(max-width: $tablet) {
+                    margin: 0 auto;
+                    display: flex;
+                }
+            }
+            &>div {
+                width: 50%;
+                @media(max-width: $tablet) {
+                    width: 100%;
+                }
+                h2 {
+                    margin-bottom: 30px;
+                    font-size: 2em;
+                    @media(max-width: $tablet) {
+                        margin-bottom: 0;
+                        text-align: center;
+                        font-size: 1.2em;
+                    }
+                }
+                p {
+                    margin-bottom: 30px;
+                    @media(max-width: $tablet) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            &>div:nth-child(1) {
+                display: flex;
+                justify-content: flex-start;
+                @media(max-width: $desktop) {
+                    justify-content: center;
+                }
+                @media(max-width: $tablet) {
+                    display: none;
+                }
+            }
+            img {
+                min-width: 300px;
+                width: 300px;
+                height: 300px;
+                margin-right: 50px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+        }
+    }
+}
+
+.slider-buttons {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 25px;
+    right: 25px;
+    transform: translate(0, -50%);
+    @media(max-width: $tablet) {
+        justify-content: center;
+        top: unset;
+        bottom: 0;
+        transform: unset;
+        -webkit-transform: unset;
+        -moz-transform: unset;
+        -ms-transform: unset;
+        -o-transform: unset;
+    }
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        border-radius: 50%;
+        border: 3px solid $yellow-light;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        &:disabled {
+            opacity: 0.2;
+        }
+        svg {
+            width: 15px;
+            height: 15px;
+            path {
+                fill: $yellow-light;
+            }
         }
     }
 }
