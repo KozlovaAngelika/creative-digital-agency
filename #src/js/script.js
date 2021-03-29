@@ -1,6 +1,14 @@
 const burger = document.querySelector('.burger');
 
 function init() {
+    window.addEventListener('scroll', function() {
+        let goUpBtn = document.querySelector('.go-up-btn');
+        if (pageYOffset > document.documentElement.clientHeight) {
+            goUpBtn.classList.add('active');
+        } else {
+            goUpBtn.classList.remove('active');
+        }
+    });
     burger.addEventListener('click', toggleMenu);
     sliderInit();
 }
@@ -137,5 +145,6 @@ function createItems(category) {
         itemHoverContent.appendChild(span);
     })
 }
+
 init();
 initWorksMenu();

@@ -27,18 +27,23 @@ $black:#111111;
 $yellow:#f6ae35;
 $yellow-light:#ffc41f;
 $grey:#bebebe;
+$dark-grey:#151515;
 $desktop:1200px;
 $tablet:992px;
 $mobile:768px;
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    overflow-x: hidden;
-    font-family: "Arial";
-    font-size: 16px;
-    line-height: 1.2;
-    color: $white;
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    color: $white;
+    line-height: 1.2;
+    font-family: "Arial";
+    font-size: 16px;
+    overflow-x: hidden;
     &.lock {
         overflow-y: hidden;
     }
